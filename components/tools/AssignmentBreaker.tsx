@@ -83,7 +83,7 @@ export function AssignmentBreaker() {
 
   function handleAddStep(i: number, step: Step) {
     addTask({ title: step.text, description: `Part of: ${title}`, priority: 'medium', dueDate: dueDate || undefined })
-    setAdded(prev => new Set([...prev, i]))
+    setAdded(prev => new Set(Array.from(prev).concat(i)))
   }
 
   function handleAddAll() {
