@@ -66,7 +66,7 @@ export function GoalPathGenerator() {
   function handleAddTask(mIdx: number, tIdx: number, text: string) {
     const key = `${mIdx}-${tIdx}`
     addTask({ title: text, description: `Goal: ${goal}`, priority: 'medium' })
-    setAdded(prev => new Set([...prev, key]))
+    setAdded(prev => new Set(Array.from(prev).concat(key)))
   }
 
   return (
